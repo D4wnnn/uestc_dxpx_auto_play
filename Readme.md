@@ -44,7 +44,7 @@
 >
 > 接着按下win+R,输入命令
 >
-> `chrome.exe --remote-debugging-port=9222 --user-data-dir="D:/selenium_test`
+> `chrome.exe --remote-debugging-port=9222 --user-data-dir="D:/selenium_test"`
 >
 > 会打开浏览器调试窗口
 
