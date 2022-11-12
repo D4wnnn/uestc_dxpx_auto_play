@@ -2,7 +2,7 @@
 
 ## 写在最前
 
-由于无积极分子的账号,没办法进行维护,故积极分子课程的代码可能存在相关问题
+由于无积极分子的账号,没办法进行维护(去年可行),故积极分子课程的代码可能存在相关问题
 
 发展对象课程是经过测试的
 
@@ -13,32 +13,6 @@
 ​		python 的selenium 库可模拟人的行为去操作浏览器, 是web自动化测试工具, 同时也可定制一些特定脚本去模拟人观看视频.
 
 ​		selenium的使用需要用到浏览器驱动,此处以chrome为例进行测试.
-
-## 环境配置与搭建
-
-​	python:3.11
-
-​	selenium:4.1.3
-
-> 如何安装selenium?
->
-> 在pycharm的Terminal(终端)执行pip install selenium
-
-​	chrome:100.0.4896.75
-
-> ​	如何查看chrome版本?
->
-> 在chrome地址栏输入chrome://version,第一行即是版本
-
-​	chrome驱动:100.0.4896.60
-
-> 如何根据下载驱动?
->
-> https://chromedriver.storage.googleapis.com/index.html
->
-> 在网址中找到对应chrome版本的驱动(版本号相近即可),
->
-> 下载"chromedriver_win32.zip",将里面的"chromedriver.exe"放到与main.py同一目录下
 
 ## 成果演示
 
@@ -52,23 +26,52 @@
 
 ![image-20220414074136882](Readme/image-20220414074136882.png)
 
-## 实现过程
+## 实现过程(发展对象)以Chrome为例
 
-1.安装完selenium和python后,将驱动安放好位置,还需要进行一些额外配置
+1. 基础环境安装
 
-> 首先将chrome安装目录"C:\Program Files\Google\Chrome\Application"(默认为这个,需要根据你的电脑自行查找)添加到环境变量path,添加过程详见百度
->
-> 接着按下win+R,输入命令
->
-> `chrome.exe --remote-debugging-port=9222 --user-data-dir="D:/selenium_test"`
->
-> 会打开浏览器调试窗口
+* python
 
-2.我们首先需要在上一步打开的窗口人为登录,进入如下界面(若使用selenium登录需要用到验证码,而验证码的识别需要第三方接口...付费,因此略去)
+* selenium
+
+  `pip install selenium`
+
+* chrome
+
+  * 查看chrome版本:
+
+    在chrome地址栏输入chrome://version,第一行即是版本
+
+  * 根据chrome版本下载驱动?
+
+  * 在https://chromedriver.storage.googleapis.com/index.html
+
+    中找到对应chrome版本的驱动(版本号相近即可),
+
+    下载"chromedriver_win32.zip",将里面的"chromedriver.exe"放到与fzdx.py同一目录下
+
+2. 安装完selenium和python后,将驱动安放好位置,还需要进行一些额外配置
+
+   首先将chrome安装目录"C:\Program Files\Google\Chrome\Application"(默认为这个,需要根据你的电脑自行查找)添加到环境变量path,添加过程详见百度
+
+   接着按下win+R,输入命令
+
+   `chrome.exe --remote-debugging-port=9222 --user-data-dir="D:/selenium_test"`
+
+   会打开浏览器调试窗口
+
+3. 打开[课程网址](https://dxpx.uestc.edu.cn/),然后登录,然后进入`https://dxpx.uestc.edu.cn/fzdx/lesson`
+4. 运行`fzdx.py`
+
+## 实现过程(积极分子)
+
+前两步骤同上
+
+1. 打开[课程网址](https://dxpx.uestc.edu.cn/),然后登录,登录后进入如下界面
 
 <img src="Readme/image-20220414075055399.png" alt="image-20220414075055399" style="zoom: 25%;" />
 
-3.接下来运行程序
+2. 运行`python jjfx.py`
 
 ## 注意问题
 
