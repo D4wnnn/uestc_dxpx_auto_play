@@ -71,7 +71,7 @@
 
 <img src="Readme/image-20220414075055399.png" alt="image-20220414075055399" style="zoom: 25%;" />
 
-2. 运行`python jjfx.py`
+2. 运行`python jjfz.py`
 
 ## 注意问题
 
