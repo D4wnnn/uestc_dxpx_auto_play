@@ -30,7 +30,8 @@ class Main:
         """处理视频暂停问题"""
         pause_ele = self.wd.find_element(By.CSS_SELECTOR, '#wrapper > div > div.plyr__controls > button:nth-child(1)')
         if pause_ele.get_attribute("aria-label") == "Play":
-            pause_btn = self.wd.find_element(By.CSS_SELECTOR, '#wrapper > div > div.plyr__controls > button:nth-child(1)')
+            pause_btn = self.wd.find_element(By.CSS_SELECTOR,
+                                             '#wrapper > div > div.plyr__controls > button:nth-child(1)')
             pause_btn.send_keys(Keys.ENTER)
             try:
                 # 尝试点击'继续'(处理弹窗)
@@ -52,6 +53,7 @@ class Main:
                 time_ele = self.wd.find_element(By.CSS_SELECTOR, 'div[aria-label="Current time"]')
                 if time_ele.get_attribute("innerText").replace('-', '') == "00:00":
                     print('播放完成,点击按钮"我知道了"')
+                    time.sleep(5)
                     break
             except Exception as e:
                 self.wd.save_screenshot(f"视频{one_index}.png")
@@ -100,7 +102,8 @@ class Main:
             study_list[index_study_list].send_keys(Keys.ENTER)
             # 接下来只考虑二级界面
             # 获得按钮'必修'
-            necessary_btn = self.wd.find_element(By.CSS_SELECTOR, 'body > div > div.w1150 > div.wrap_right > div.lesson1_cont.q_lesson1_con > div.lesson1_title > div > a:nth-child(2)')
+            necessary_btn = self.wd.find_element(By.CSS_SELECTOR,
+                                                 'body > div > div.w1150 > div.wrap_right > div.lesson1_cont.q_lesson1_con > div.lesson1_title > div > a:nth-child(2)')
             # 点击‘按钮’必修
             necessary_btn.send_keys(Keys.ENTER)
             # 必修页面的课程列表
@@ -115,7 +118,8 @@ class Main:
                 self.manage(index_necessary_list)
                 # 处理完视频回退
                 self.wd.get(necessary_page)
-                print(f"专题{index_study_list + 1}/{length_study_list}:完成必修课程{index_necessary_list + 1}/{length_necessary_list},三秒后进入下一个必修课程...")
+                print(
+                    f"专题{index_study_list + 1}/{length_study_list}:完成必修课程{index_necessary_list + 1}/{length_necessary_list},三秒后进入下一个必修课程...")
             self.wd.get(self.base_url)
         print("完成所有必修课程学习!")
 
